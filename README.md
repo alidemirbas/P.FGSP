@@ -9,7 +9,7 @@ IEnumerable<KendoFooDataTable> dataResult = _fooQueryableDataTableResult
 It's that much easy 😏 Check the QueryTest.cs file for more examples. https://github.com/alidemirbas/P.FGSP/blob/master/QueryTest.cs
 
 Ok but wait this time...
-What is that? 😕 (check out the image too https://github.com/alidemirbas/P.FGSP/blob/master/_http_post_request_form_example.png)
+What is that? 😕 (check out the image too https://github.com/alidemirbas/P.FGSP/blob/master/_http_post_request_form_example.PNG)
 
 -----------------------------------------------------
 
