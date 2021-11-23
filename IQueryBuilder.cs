@@ -1,4 +1,6 @@
-﻿using System.Collections.Specialized;
+﻿using Microsoft.Extensions.Primitives;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 
 namespace P.FGSP
@@ -7,6 +9,6 @@ namespace P.FGSP
     {
         IQueryCreator Creator { get; }
 
-        IQueryable<T> Build<T>(IQueryable<T> source, NameValueCollection form);
+        IQueryable<T> Build<T>(IQueryable<T> source, IEnumerable<KeyValuePair<string, StringValues>> form);
     }
 }

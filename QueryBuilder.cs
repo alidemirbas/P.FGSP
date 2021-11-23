@@ -1,4 +1,4 @@
-﻿using P.Utility;
+﻿using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -16,7 +16,7 @@ namespace P.FGSP
 
         public IQueryCreator Creator { get; }
 
-        public IQueryable<T> Build<T>(IQueryable<T> source, NameValueCollection form)
+        public IQueryable<T> Build<T>(IQueryable<T> source, IEnumerable<KeyValuePair<string, StringValues>> form)
         {
             IQuery query = Creator.Create<T>(form);
 
@@ -36,7 +36,7 @@ namespace P.FGSP
 
         //recursive
         //rule SQL query'leri icin filedName, TableName.ColumnName den daha derin olmuyor o yuzden predicate icin yazacagi x.y dir.
-        private LinqDynamicParameter BuildFilter(Dictionary<string, Type> fieldList, Filter filter)//, out string predicate, out object[] values)//Id=@0 and Name=@1, value=[3,"foo"] gibi
+        private LinqDynamicParameter BuildFilter(IDictionary<string, Type> fieldList, Filter filter)//, out string predicate, out object[] values)//Id=@0 and Name=@1, value=[3,"foo"] gibi
         {
             LinqDynamicParameter ldp = new LinqDynamicParameter();
 
@@ -67,7 +67,7 @@ namespace P.FGSP
             return ldp;
         }
 
-        private string BuildSort(List<Sorter> sorters)//, out object[] values) //attn orderby'da values var ama boyle de yiyor
+        private string BuildSort(IEnumerable<Sorter> sorters)//, out object[] values) //attn orderby'da values var ama boyle de yiyor
         {
             string predicate = string.Empty;
             //values = new object[0];

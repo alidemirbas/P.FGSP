@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Primitives;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -8,14 +9,20 @@ namespace P.FGSP
 
     public class KendoQueryCreator : IQueryCreator
     {
-        public IQuery Create<T>(NameValueCollection form)
+        public IQuery Create<T>(IEnumerable<KeyValuePair<string, StringValues>> form)
         {
+            NameValueCollection formNVC = new NameValueCollection();
+            
+            foreach (var item in form)
+                formNVC.Add(item.Key, item.Value);
+
             Type modelType = typeof(T);
+
             Query q = new Query();
-            q.Pager = new Pager(int.Parse(form["page"]), int.Parse(form["take"]));
-            q.Filter = CreateFilter(modelType, form);
-            q.Sorters = CreateSorters(form);
-            //todo grup
+            q.Pager = new Pager(int.Parse(formNVC["page"]), int.Parse(formNVC["take"]));
+            q.Filter = CreateFilter(modelType, formNVC);
+            q.Sorters = CreateSorters(formNVC);
+            //todo group
 
             return q;
         }
