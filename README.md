@@ -2,7 +2,7 @@ You wanna create IQueryable object from http request directly?..
 
 ```csharp
 IEnumerable<KendoFooDataTable> dataResult = _fooQueryableDataTableResult
-                .Build(_requestForm)
+                .Build(_requestForm) //like HttpContext.Request.Form
                 .ToList();
 ```
 
