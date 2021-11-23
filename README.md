@@ -12,6 +12,7 @@ Ok but wait this time...
 What is that? 😕
 
 -----------------------------------------------------
+
 "page", "1"
 "take", "2"
 
@@ -27,6 +28,7 @@ What is that? 😕
 
 "sort[0][field]", "Number"
 "sort[0][dir]", "asc"
+
 -----------------------------------------------------
 
 let me clarify...
