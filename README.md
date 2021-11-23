@@ -11,7 +11,7 @@ It's that much easy 😏 Check the QueryTest.cs file for more examples. https://
 Ok but wait this time...
 What is that? 😕 (check out the image too https://github.com/alidemirbas/P.FGSP/blob/master/_http_post_request_form_example.PNG)
 
------------------------------------------------------
+---------
 
 "page", "1"
 "take", "2"
@@ -29,7 +29,7 @@ What is that? 😕 (check out the image too https://github.com/alidemirbas/P.FGS
 "sort[0][field]", "Number"
 "sort[0][dir]", "asc"
 
------------------------------------------------------
+---------
 
 let me clarify...
 That is a http post request form values from something like javascript datatable for "server side" querying (filtering, grouping, sorting, paging)
