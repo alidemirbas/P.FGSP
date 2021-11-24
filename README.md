@@ -31,7 +31,7 @@ Ok but wait this time...
 ---------
 What is that? 😕 (check out the image too https://github.com/alidemirbas/P.FGSP/blob/master/_http_post_request_form_example.PNG)  
   
-let me clarify...  
+Let me clarify...  
 That is a http post request form values from something like javascript datatable for "server side" querying (filtering, grouping, sorting, paging)  
-(btw it's from Telerik Kendo)  
-(and im gonna implement for jquery datatable in this century 🤗)  
+(Btw it's from Telerik Kendo)  
+(And im gonna implement for jquery datatable in this century 🤗)  
