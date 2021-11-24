@@ -34,4 +34,4 @@ What is that? 😕 (check out the image too https://github.com/alidemirbas/P.FGS
 Let me clarify...  
 That is a http post request form values from something like javascript datatable for "server side" querying (filtering, grouping, sorting, paging)  
 (Btw it's from Telerik Kendo)  
-(And im gonna implement for jquery datatable in this century 🤗)  
+(And i'm gonna implement for jquery datatable in this century 🤗)  
