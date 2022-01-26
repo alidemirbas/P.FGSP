@@ -2,7 +2,7 @@
 
 namespace P.FGSP
 {
-    public enum ConditionOperator
+    public enum ConditionOperator: byte
     {
         None,
         Equals,
