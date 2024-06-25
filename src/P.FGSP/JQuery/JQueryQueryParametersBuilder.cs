@@ -59,6 +59,9 @@ namespace P.FGSP.JQuery
                     var fields = fieldName.Split('.');
                     var fieldType = GetInnerMostTypeByFields(fields, modelType);
 
+                    if (fieldType == null)
+                        continue;
+
                     ConditionOperator op;
 
                     if (fieldType == typeof(string))

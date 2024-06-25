@@ -17,7 +17,10 @@ namespace P.FGSP
 
         protected virtual Type GetInnerMostTypeByFields(string[] fields, Type type, int depth = 0)
         {
-            var t = type.GetProperties().Single(x => x.Name.ToLower() == fields[depth].ToLower()).PropertyType;
+            var t = type.GetProperties().SingleOrDefault(x => x.Name.ToLower() == fields[depth].ToLower()).PropertyType;
+
+            if (t == null)
+                return null;
 
             if (fields.Length != depth + 1)
             {

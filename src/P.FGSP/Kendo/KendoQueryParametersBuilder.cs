@@ -62,6 +62,10 @@ namespace P.FGSP.Kendo
 
                     var fields = fieldName.Split('.');
                     var fieldType = GetInnerMostTypeByFields(fields, modelType);
+
+                    if (fieldType == null)
+                        continue;
+
                     var value = Convert.ChangeType(form["filter[filters][" + i + "][value]"], fieldType);
 
                     filter.Conditions.Add(new Condition(fieldName, op, value));
