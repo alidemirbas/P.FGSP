@@ -22,11 +22,11 @@ namespace P.FGSP
 
                 var form = Enumerable.Empty<KeyValuePair<string, StringValues>>();
 
-                var httpContext = x.GetRequiredService<IHttpContextAccessor>().HttpContext;
-
                 try
                 {
-                    form = httpContext.Request.Form;
+                    var httpContext = x.GetRequiredService<IHttpContextAccessor>().HttpContext;
+                    if (httpContext?.Request?.Form != null)
+                        form = httpContext.Request.Form;
                 }
                 catch
                 {

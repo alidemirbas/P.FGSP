@@ -14,6 +14,9 @@ namespace P.FGSP.JQuery
 
         public override IQueryParameters Build<T>()
         {
+            if (_form == null && !_form.Any())
+                return _queryParameters;
+
             var formNVC = new NameValueCollection();
 
             foreach (var item in _form)

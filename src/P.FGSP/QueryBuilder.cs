@@ -18,13 +18,16 @@ namespace P.FGSP
             var type = typeof(T);
             var fieldList = BuildPropertyCollection(type);
 
-            var ldp = BuildFilter(fieldList, queryParameters.Filter);
+            if (queryParameters.Filter != null)
+            {
+                var ldp = BuildFilter(fieldList, queryParameters.Filter);
 
-            if (ldp.Values.Any())
-                source = source
-                    .Where(ldp.Predicate, ldp.Values.ToArray());
+                if (ldp.Values.Any())
+                    source = source
+                        .Where(ldp.Predicate, ldp.Values.ToArray());
+            }
 
-            if (ignore == null || !ignore.Value.HasFlag(QueryBuilderIgnore.Sorting))
+            if (queryParameters.Sorters != null && (ignore == null || !ignore.Value.HasFlag(QueryBuilderIgnore.Sorting)))
             {
                 var sortPredicate = BuildSort(queryParameters.Sorters);
 
@@ -33,7 +36,7 @@ namespace P.FGSP
                         .OrderBy(sortPredicate);
             }
 
-            if (ignore == null || !ignore.Value.HasFlag(QueryBuilderIgnore.Paging))
+            if (queryParameters.Pager != null && (ignore == null || !ignore.Value.HasFlag(QueryBuilderIgnore.Paging)))
             {
                 source = source
                     .Skip(queryParameters.Pager.Skip)
