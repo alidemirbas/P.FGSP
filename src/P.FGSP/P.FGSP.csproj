@@ -4,7 +4,7 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageOutputPath>D:\nuget</PackageOutputPath>
+    <PackageOutputPath>C:\nuget</PackageOutputPath>
 	</PropertyGroup>
 
 	<ItemGroup>
